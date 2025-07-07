@@ -1,3 +1,4 @@
+const { Sequelize } = require('sequelize')
 const { Transacciones } = require('../models');
 
 const getAllTransacciones = async (req, res) => {
@@ -38,6 +39,46 @@ const getTransaccionesById = async (req, res) => {
         res.status(500).json({ error: 'Error al obtener la transacción', message: error.message });
     }
 }
+
+const getTransaccionesByFecha = async (req, res) => {
+    try {
+        const { fecha } = req.query;
+        if(!fecha) {
+            return res.status(404).json({error: 'Fecha incorrecta o sin transacciones'});
+        }
+
+        const transacciones = await Transacciones.findAll({
+            where: {
+                fecha: {
+                    [Sequelize.Op.eq]: fecha
+                }
+            }
+        });
+
+        res.json(transacciones)
+    } catch (error) {
+        res.status(500).json({error: 'Error al obtener transacciones', messaje: error.message});
+    }
+};
+
+const getTransaccionesByCategoria = async (req, res) => {
+    try {
+        const {categoria } = req.query;
+        if(!categoria) {
+            return res.status(404).json({error: 'No se encontró la categoria'})
+        }
+        const transacciones = await Transacciones.findAll({
+            where: {
+                categoria: {
+                    [Sequelize.Op.eq]: categoria
+                }
+            }
+        });
+        res.json(transacciones);
+    } catch (error) {
+        res.status(500).json({error: 'Error al obtener transacciones', message: error.message})
+    }
+};
 
 const createTransaccion = async (req, res) => {
     try {
@@ -96,10 +137,42 @@ const deleteTransaccion = async (req, res) => {
     }
 }
 
+const getBalance = async (req, res) => {
+    try {
+        const resultados = await Transacciones.findAll({
+            attributes: [
+                'tipo',
+                [Sequelize.fn('SUM', Sequelize.col('monto')), 'total']
+            ],
+            group:['tipo']
+        });
+        let ingresos = 0;
+        let gastos = 0;
+        resultados.forEach(item => {
+            const tipo = item.getDataValue('tipo');
+            const total = parseFloat(item.getDataValue('total'));
+            if (tipo == 'ingreso') ingresos = total;
+            if (tipo == 'gasto') gastos = total;
+        });
+
+        const balance = ingresos - gastos;
+        res.json({
+            ingreso: ingresos,
+            gasto: gastos,
+            balance
+        });
+    } catch (error) {
+        res.status(500).json({error: 'Error al obtener el balance'})
+    }
+}
+
 module.exports = {
     getAllTransacciones,
     getTransaccionesById,
+    getTransaccionesByFecha,
+    getTransaccionesByCategoria,
     createTransaccion,
     updateTransaccion,
-    deleteTransaccion
+    deleteTransaccion,
+    getBalance
 };
