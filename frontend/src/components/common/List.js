@@ -17,22 +17,10 @@ function TodoList() {
 
   useEffect(() => {
     fetchTransaccionesAndBalance();
-  }, [filtroFecha, filtroCategoria]);
+  }, []);
 
   const fetchTransaccionesAndBalance = () => {
-    let transaccionesUrl = API_URL;
-    const queryParams = new URLSearchParams();
-    if (filtroFecha) {
-      queryParams.append('fecha', filtroFecha);
-    }
-    if (filtroCategoria) {
-      queryParams.append('categoria', filtroCategoria);
-    }
-    if (queryParams.toString()) {
-      transaccionesUrl += `?${queryParams.toString()}`;
-    }
-
-    fetch(transaccionesUrl)
+    fetch(API_URL)
       .then(res => res.json())
       .then(data => setTransacciones(data.transacciones || []))
       .catch(err => console.error('Error al cargar transacciones:', err));

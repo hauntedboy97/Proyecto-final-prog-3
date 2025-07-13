@@ -184,7 +184,7 @@ const getBalance = async (req, res) => {
             balance
         });
     } catch (error) {
-        console.error('Error en getBalance:', error); 
+        console.error('Error en getBalance:', error); // Para depuración
         res.status(500).json({ error: 'Error al obtener el balance', message: error.message });
     }
 };

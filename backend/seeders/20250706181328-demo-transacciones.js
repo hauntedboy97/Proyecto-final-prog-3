@@ -8,8 +8,8 @@ module.exports = {
     monto: 9850.75,
     fecha: "2025-07-02",
     tipo: "Gasto",
-    categoria: "Servicios",
-    descripcion: "Factura de electricidad del mes",
+    categoria: "servicios",
+    descripcion: "factura de electricidad del mes",
     createdAt: new Date(),
     updatedAt: new Date()
   },
@@ -17,8 +17,8 @@ module.exports = {
     monto: 30000.00,
     fecha: "2025-07-05",
     tipo: "Ingreso",
-    categoria: "Inversiones",
-    descripcion: "Ganancia por venta de acciones",
+    categoria: "inversiones",
+    descripcion: "ganancia por venta de acciones",
     createdAt: new Date(),
     updatedAt: new Date()
   },
@@ -26,8 +26,8 @@ module.exports = {
     monto: 1800.00,
     fecha: "2025-07-06",
     tipo: "Gasto",
-    categoria: "Transporte",
-    descripcion: "Recarga de SUBE",
+    categoria: "transporte",
+    descripcion: "recarga de SUBE",
     createdAt: new Date(),
     updatedAt: new Date()
   },
@@ -35,8 +35,8 @@ module.exports = {
     monto: 6500.00,
     fecha: "2025-07-01",
     tipo: "Gasto",
-    categoria: "Entretenimiento",
-    descripcion: "Entradas para concierto",
+    categoria: "entretenimiento",
+    descripcion: "entradas para concierto",
     createdAt: new Date(),
     updatedAt: new Date()
   },
@@ -44,8 +44,8 @@ module.exports = {
     monto: 7000.00,
     fecha: "2025-06-30",
     tipo: "Ingreso",
-    categoria: "Otros Ingresos",
-    descripcion: "Reintegro de compra online",
+    categoria: "otros Ingresos",
+    descripcion: "reintegro de compra online",
     createdAt: new Date(),
     updatedAt: new Date()
   }
