@@ -5,13 +5,15 @@ const {
     getTransaccionesById,
     createTransaccion,
     updateTransaccion,
-    deleteTransaccion
+    deleteTransaccion,
+    getBalance,
   } = require('../controllers/transaccionesController');
   
 router.get('/', getAllTransacciones);
-router.get('/:id', getTransaccionesById);
+router.get('/balance', getBalance);
 router.post('/', createTransaccion);
 router.put('/:id', updateTransaccion);
 router.delete('/:id', deleteTransaccion);
+router.get('/:id', getTransaccionesById);
 
 module.exports = router;

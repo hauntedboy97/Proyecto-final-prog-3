@@ -1,0 +1,152 @@
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 40px;
+  box-sizing: border-box;
+  background-color: #f4f6f8;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+h2 {
+  margin-bottom: 16px;
+  color: #333;
+}
+
+
+input[type="text"],
+input[type="number"],
+textarea {
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+
+button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
+.transaccion-lista {
+  list-style: none;
+  padding: 0;
+  margin-top: 24px;
+}
+
+.transaccion-item {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  transition: box-shadow 0.2s ease;
+}
+
+.transaccion-item:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.transaccion-item h3 {
+  margin: 0 0 8px;
+  text-transform: capitalize;
+}
+
+.transaccion-item p {
+  margin: 4px 0;
+  font-size: 14px;
+}
+
+.layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.panel-form {
+  flex: 1;
+  max-width: 400px;
+}
+
+.panel-lista {
+  flex: 2;
+  min-width: 500px;
+}
+
+
+.filtros {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.balance-info {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd; 
+  border-radius: 8px; 
+  padding: 15px; 
+  margin-bottom: 20px; 
+  text-align: center; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.balance-info h3 {
+  color: #333; 
+  margin-bottom: 10px; 
+  font-size: 1.5em; 
+}
+
+.balance-info p {
+  margin: 5px 0; 
+  color: #555; 
+  font-size: 1.1em; 
+}
+
+
+.balance-info p:nth-of-type(1) { 
+  color: #28a745; 
+  font-weight: bold; 
+}
+
+.balance-info p:nth-of-type(2) { 
+  color: #dc3545; 
+  font-weight: bold; 
+}
+
+
+.balance-positivo {
+  color: #28a745; 
+}
+
+.balance-negativo {
+  color: #dc3545; 
+}

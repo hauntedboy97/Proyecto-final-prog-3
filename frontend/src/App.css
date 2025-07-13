@@ -1,19 +1,46 @@
+/* Importar fuente Roboto desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* Estilo general */
 .App {
-  text-align: center;
-}
-
-.App-header {
-  background-color: #282c34;
-  padding: 20px;
-  color: white;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f6f8;
+  color: #1a1a1a; /* Color de texto más oscuro */
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
 }
 
-.App-header a {
-  color: #61dafb;
+/* Encabezado */
+.App-header {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
+
+.App-header h1 {
+  font-size: 2em;
+  color: #2c3e50; /* Tono azul oscuro */
+  margin-bottom: 10px;
+}
+
+.App-header p {
+  font-size: 1.1em;
+  margin: 10px 0;
+  color: #333; /* Texto más oscuro */
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .App-header h1 {
+    font-size: 1.5em;
+  }
+
+  .App-header p {
+    font-size: 1em;
+  }
+}
+
+
