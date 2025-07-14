@@ -4,14 +4,17 @@
   min-height: 100vh;
   padding: 40px;
   box-sizing: border-box;
-  background-color: #f4f6f8;
+  background-color: #aacff3;
+  background-image: url("https://www.santander.com/content/dam/santander-com/es/stories/cabecera/2021/educacionfinanciera/im-storie-pasos-para-elaborar-un-presupuesto-familiar-a-medida-desktop.jpg");
+  background-size: cover;
+  background-position: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 
 h2 {
   margin-bottom: 16px;
-  color: #333;
+  color: black;
 }
 
 
@@ -19,7 +22,7 @@ input[type="text"],
 input[type="number"],
 textarea {
   padding: 8px 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #cdd8f7;
   border-radius: 6px;
   font-size: 14px;
   width: 100%;
@@ -33,15 +36,15 @@ textarea {
 
 input:focus,
 textarea:focus {
-  border-color: #007bff;
+  border-color: #114f91;
   outline: none;
 }
 
 
 button {
   padding: 10px;
-  background-color: #007bff;
-  color: white;
+  background-color: #111d9e;
+  color: rgb(191, 217, 238);
   border: none;
   font-weight: bold;
   border-radius: 6px;
@@ -61,7 +64,7 @@ button:hover {
 }
 
 .transaccion-item {
-  background-color: #ffffff;
+  background-color: #5988ce;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 12px;
